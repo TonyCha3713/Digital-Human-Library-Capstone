@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg: #fffaf2;
+  --paper: #ffffff;
+  --ink: #123149;
+  --muted: #5c6b78;
+  --orange: #f69524;
+  --grey: #d2d3d4;
+  --dark-blue: #1767a2;
+  --bright-blue: #2dade3;
+  --green: #8ec442;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(246, 149, 36, 0.12), transparent 38%),
+    radial-gradient(circle at 92% 16%, rgba(45, 173, 227, 0.16), transparent 34%),
+    var(--bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-playfair), serif;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-6xl px-5 py-18 md:px-8;
+}
+
+.dhl-card {
+  @apply rounded-2xl border border-white/30 bg-white/80 shadow-[0_20px_45px_-28px_rgba(23,103,162,0.45)] backdrop-blur-sm;
+}
+
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orange)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)];
 }
